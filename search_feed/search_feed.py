@@ -3,7 +3,7 @@
 
 # --------------------------------------------------------------------------- #
 #                                                                             #
-#    Plugin for iSida Jabber Bot                                              #
+#    Search feeds url at web-page                   #
 #    Copyright (C) 2011 diSabler <dsy@dsy.name>                               #
 #                                                                             #
 #    This program is free software: you can redistribute it and/or modify     #
