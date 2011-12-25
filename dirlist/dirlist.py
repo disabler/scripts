@@ -219,30 +219,3 @@ for t in dirs+files:
 
 		
 print html_end
-
-'''
-HTTP_COOKIE - vzcpRefreshPeriod=0; vzcpTimeZone=; vzcpSkin=plesk-silver; storedtemplate=calm; __utma=266338710.983322638.1257063005.1320399331.1320401881.110; __utmb=266338710.1.10.1320401881; __utmc=266338710; __utmz=266338710.1319818823.89.69.utmcsr=bt.isida-bot.com|utmccn=(referral)|utmcmd=referral|utmcct=/records/view.php<br>
-REDIRECT_STATUS - 200<br>
-SERVER_SOFTWARE - (c) 2oo4-2o11 Disabler Production Lab. // lighttpd v1.4.28-dev<br>
-SCRIPT_NAME - /chatlogs/isida@conference.jabber.ru/2009//chatlogs/index.py<br>
-REQUEST_METHOD - GET<br>
-SERVER_PROTOCOL - HTTP/1.1<br>
-CONTENT_LENGTH - 0<br>
-HTTP_USER_AGENT - Opera/9.80 (Windows NT 6.1; U; ru) Presto/2.9.168 Version/11.52<br>
-HTTP_CONNECTION - Keep-Alive<br>
-HTTP_REFERER - http://isida-bot.com/chatlogs/isida@conference.jabber.ru/2009/11/<br>
-SERVER_NAME - isida-bot.com<br>
-REMOTE_PORT - 6311<br>
-SERVER_PORT - 80<br>
-SERVER_ADDR - 87.118.108.254<br>
-DOCUMENT_ROOT - /var/www/html/<br>
-SCRIPT_FILENAME - /var/www/html//chatlogs/index.py<br>
-HTTP_HOST - isida-bot.com<br>
-HTTP_CACHE_CONTROL - no-cache<br>
-REQUEST_URI - /chatlogs/isida@conference.jabber.ru/2009/<br>
-HTTP_ACCEPT - text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/webp, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1<br>
-GATEWAY_INTERFACE - CGI/1.1<br>
-REMOTE_ADDR - 213.138.80.22<br>
-HTTP_ACCEPT_LANGUAGE - ru-RU,ru;q=0.9,en;q=0.8<br>
-HTTP_ACCEPT_ENCODING - gzip, deflate<br>
-'''
