@@ -70,10 +70,6 @@ html_end = '''
 </html>
 '''
 
-#<br><p align="right">
-#<font color="#0000aa">(c)&nbsp;2oo9-2o11&nbsp;Disabler&nbsp;Production&nbsp;Lab</font><font color="#ff0000">A</font><font color="#0000aa">ratory&nbsp;&nbsp;&nbsp;&nbsp;</font>
-#</p>
-
 mask = '<tr><td class="n">%s<a href="%s"><font color=black>%s</font></a></td><td class="m">%s</td><td class="s">%s</td><td class="t">%s</td></tr>'
 
 mimetype = {'pdf':'application/pdf',
@@ -131,40 +127,12 @@ mimetype = {'pdf':'application/pdf',
 			'tar':'application/x-bzip-compressed-tar',
 			'.':'application/octet-stream'}
 
-#form = cgi.FieldStorage() 
-#print form.getvalue()
-#print sys.argv
-#print cgi.FormContentDict()
-
-#print wsgiref.util.request_uri('PATH_INFO')
-
 img = '<img src="%s"/>'
 img_folder = img % '/images/dirlist-folder.png'
 img_file = img % '/images/dirlist-file.png'
 img_back = img % '/images/dirlist-back.png'
 
 dir_name = os.environ['REQUEST_URI'][:-1]
-'''
-log_dir = '.log'
-
-log_file_name = time.strftime('%Y%m%d.txt',time.localtime())
-
-log_time  = time.strftime('%H:%M:%S',time.localtime())
-log_ip    = unicode(os.environ['REMOTE_ADDR'])
-try: log_ref   = unicode(os.environ['HTTP_REFERER'])
-except: log_ref   = 'Direct connect'
-log_agent = unicode(os.environ['HTTP_USER_AGENT'])
-
-lrec = '%s [%s] %s (%s -> %s)\n' % (log_time,log_ip,log_agent,log_ref,dir_name)
-
-if not os.path.exists(log_dir): os.mkdir(log_dir)
-
-fl = open('%s/%s' % (log_dir,log_file_name), 'a')
-fl.write(lrec.encode('utf-8'))
-fl.close()
-'''
-#for i in os.environ.keys():
-#	print '%s - %s<br>' % (i,os.environ[i])
 
 def error_handler(error):
 	print error
@@ -173,7 +141,7 @@ def error_handler(error):
 HOST_DIR = '/var/www/html/'
 if os.environ['DOCUMENT_ROOT'] != HOST_DIR: error_handler('Incorrect root!')
 
-ALLOWED_DIRS = ['/sys','/sys/c/.log','/svn']
+ALLOWED_DIRS = ['/svn']
 correct = False
 for t in ALLOWED_DIRS:
 	if dir_name.startswith(t):
@@ -181,14 +149,13 @@ for t in ALLOWED_DIRS:
 		break
 if not correct: error_handler('Incorrect path: %s' % dir_name)
 
-dnn = dir_name#[1:].capitalize().replace('/',': ',1).replace('/',' - ',1)
+dnn = dir_name
 dnnurl = '/'
 cmp = '/'
 for t in dir_name[1:].split('/')[:-1]:
 	cmp += '%s/' % t
 	dnnurl += '<a href="%s">%s</a>/' % (cmp,t)
 dnnurl += dir_name.split('/')[-1]
-
 
 print html_head % (dnn,dnnurl,img_back)
 
@@ -215,7 +182,5 @@ for t in dirs+files:
 			sz = os.path.getsize('../%s/%s' % (dir_name,t))
 			fn = t
 		print mask % (timg,t,fn,tm,sz,isd)
-		
 
-		
 print html_end
